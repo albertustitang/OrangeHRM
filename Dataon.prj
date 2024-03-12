@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project>
    <description></description>
-   <name>Dataon</name>
+   <name>OrangeHRM</name>
    <tag></tag>
    <UUID>c015a9cf-b33f-401b-9232-56cf6c4a7218</UUID>
    <migratedVersion>5.9.0</migratedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
-   <projectFileLocation>D:\Dataon\Dataon.prj</projectFileLocation>
+   <projectFileLocation>D:\OrangeHRM\Dataon.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>
