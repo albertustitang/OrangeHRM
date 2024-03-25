@@ -18,6 +18,7 @@ import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import com.thoughtworks.selenium.webdriven.commands.GetText
 
 import internal.GlobalVariable
 
@@ -40,9 +41,7 @@ public class Login {
 
 		switch(TYPE_TESTCASE) {
 			case "Positive":
-				WebUI.waitForElementVisible(findTestObject('Object Repository/Navigation/span_Profile_Name'), 5, FailureHandling.STOP_ON_FAILURE)
-				String profileName =  WebUI.getText(findTestObject('Object Repository/Navigation/span_Profile_Name'), FailureHandling.STOP_ON_FAILURE)
-				WebUI.verifyMatch(profileName, VALIDATION, false, FailureHandling.STOP_ON_FAILURE)
+				WebUI.verifyElementText(findTestObject('Object Repository/Dashboard/h6_Dashboard'), "Dashboard", FailureHandling.STOP_ON_FAILURE)
 				logout()
 				break;
 			case "Negative":
@@ -62,7 +61,7 @@ public class Login {
 	}
 
 	def logout() {
-		WebUI.click(findTestObject('Object Repository/Navigation/span_Profile_Name'), FailureHandling.STOP_ON_FAILURE)
+		WebUI.click(findTestObject('Object Repository/Navigation/span_User'), FailureHandling.STOP_ON_FAILURE)
 		WebUI.waitForElementClickable(findTestObject('Object Repository/Logout/a_Logout'), 5, FailureHandling.STOP_ON_FAILURE)
 		WebUI.click(findTestObject('Object Repository/Logout/a_Logout'), FailureHandling.STOP_ON_FAILURE)
 		WebUI.waitForPageLoad(5, FailureHandling.STOP_ON_FAILURE)
